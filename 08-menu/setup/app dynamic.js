@@ -97,6 +97,33 @@ const container = document.querySelector('.btn-container');
 // load items
 window.addEventListener('DOMContentLoaded', () => {
   displayMenuItems(menu);
+  displayMenuButtons();
+});
+
+
+function displayMenuItems(menuItems) {
+  let displayMenu = menuItems.map((item) => {
+
+    return `<artcle class="menu-item">
+    <img src=${item.img} class='photo' alt=${item.title} />
+    <div class="item-info">
+      <header>
+        <h4>${item.title}</h4>
+        <h4 class="price"$${item.price}</h4>
+      </header>
+      <p class="item-text">
+        ${item.desc}
+      </p>
+    </div>
+  </artcle>`;
+  })
+  displayMenu = displayMenu.join("");
+  sectionCenter.innerHTML = displayMenu;
+};
+
+
+
+function displayMenuButtons() {
   const categories = menu.reduce((values, item) => {
     if (!values.includes(item.category)) {
       values.push(item.category);
@@ -138,25 +165,4 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-});
-
-
-function displayMenuItems(menuItems) {
-  let displayMenu = menuItems.map((item) => {
-
-    return `<artcle class="menu-item">
-    <img src=${item.img} class='photo' alt=${item.title} />
-    <div class="item-info">
-      <header>
-        <h4>${item.title}</h4>
-        <h4 class="price"$${item.price}</h4>
-      </header>
-      <p class="item-text">
-        ${item.desc}
-      </p>
-    </div>
-  </artcle>`;
-  })
-  displayMenu = displayMenu.join("");
-  sectionCenter.innerHTML = displayMenu;
-};
+}
