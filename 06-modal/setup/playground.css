@@ -1,0 +1,25 @@
+.hero {
+    background: url("hero.jpeg") center/cover no-repeat  ;
+    height: 100%;
+    width: 100vw; 
+    text-align: center;
+    padding: 5.5rem 0;
+    transition: var(--transition);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+  }
+
+  .modal {
+   background-color: rgba(1, 100, 30, 0.321);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    visibility: visible;
+  }
